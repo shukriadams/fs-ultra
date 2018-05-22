@@ -4,9 +4,9 @@ let fs = require('fs-extra'),
 let fsPlus = {
 
     /**
-     * Gets an array of all files in a folder. Returns either filenames or fullpaths.
+     * Gets an array of all files in a folder. Returns either full paths (default) or filenames.
      */
-    getFilesInFolderSync : function(dir, fullPath = true){
+    readFilesInDirSync : function(dir, fullPath = true){
         let items = fs.readdirSync(dir)
             results = [];
 
@@ -26,7 +26,7 @@ let fsPlus = {
      * Set fullpath to false for file names only. 
      * Extension mask can be a string or array of strings, must be fill extensions with leading dots.
      */
-    getFilesUnderSync : function(dir, fullPath = true, extensionMask = []){
+    readFilesUnderDirSync : function(dir, fullPath = true, extensionMask = []){
         let results = [];
         if (!extensionMask)
             extensionMask = [];
