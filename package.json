@@ -1,0 +1,12 @@
+{
+    "name": "fs-ultra",
+    "version": "0.0.1",
+    "private": false,
+    "author": "shukri.adams@gmail.com",
+    "description" : "Like fs-extra, but with even more fs",
+    "repository" : "https://shukriadams@github.com/shukriadams/fs-ultra.git",
+    "license": "MIT",
+    "dependencies" : {
+        "fs-extra": "6.0.1"
+    }
+}
