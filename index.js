@@ -35,16 +35,18 @@ let fsPlus = {
             extensionMask= [extensionMask];
 
         function processDirectory(dir){
+
             let items = fs.readdirSync(dir)
 
             for (let item of items){
-                let stat = fs.lstatSync();
+                let itemFullPath = path.join(dir, item);
+                let stat = fs.lstatSync(itemFullPath);
                 if (stat.isDirectory())
-                    processDirectory(path.join(dir, item));
+                    processDirectory(itemFullPath);
                 else if(stat.isFile()){
                     if (extensionMask.length && !extensionMask.includes(path.extname(item)))
                         continue;
-                    results.push(fullPath ? path.join(dir, item ): item);
+                    results.push(fullPath ? itemFullPath : item);
                 }
             }
         };
